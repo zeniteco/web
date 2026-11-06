@@ -1,0 +1,149 @@
+{
+  "project_name": "ZeniTeco",
+  "target_audience": "Premium property owners, corporate facilities, residential communities",
+  "theme": "dark",
+  "typography": {
+    "headings": {
+      "family": "Playfair Display, serif",
+      "weights": ["300", "400", "600"],
+      "usage": "Use for all main section titles and the hero text for an elegant, warm, organic feel. Apply tracking-tighter for sizes above 32px."
+    },
+    "body": {
+      "family": "Manrope, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Clean, legible, and slightly warm geometric sans for all body copy, forms, and functional text."
+    },
+    "accent": {
+      "family": "Manrope, sans-serif",
+      "weights": ["700"],
+      "usage": "For overlines and small labels, uppercase with wide letter spacing (tracking-widest)."
+    }
+  },
+  "colors": {
+    "background": "#08140D", 
+    "surface": "#12261A", 
+    "surface_glass": "rgba(18, 38, 26, 0.7)",
+    "text_primary": "#F4F0E6", 
+    "text_secondary": "#B0C0B4",
+    "accent": "#D8F33C", 
+    "accent_hover": "#BCE317",
+    "border": "#1E3B2A"
+  },
+  "logo": {
+    "type": "SVG",
+    "description": "Original logo design for ZeniTeco: A modern, minimalist 'Z' where one of the diagonal strokes extends and curves organically into a subtle leaf shape. Provide the inline SVG directly in the codebase (JSX) and use it for the header and favicon."
+  },
+  "layouts": {
+    "hero": {
+      "style": "Full height (min-h-screen), immersive layout.",
+      "behavior": "Kinetic line-by-line text reveal on load. The hero image should have a slow zoom/parallax effect (using framer-motion/lenis) as the user scrolls down.",
+      "overlay": "bg-black/40 overlay to ensure H1 text contrast."
+    },
+    "services_bento": {
+      "style": "Asymmetrical Tetris Grid (Mode A).",
+      "grid_classes": "grid grid-cols-1 md:grid-cols-12 gap-8",
+      "items": [
+        {
+          "title": "Administración de inmuebles",
+          "span": "md:col-span-8 row-span-2",
+          "description": "Dominant visual block highlighting property management."
+        },
+        {
+          "title": "Mantenimiento de áreas verdes",
+          "span": "md:col-span-4 row-span-1",
+          "description": "Supporting square block highlighting landscaping."
+        },
+        {
+          "title": "Servicios combinados de apoyo",
+          "span": "md:col-span-4 row-span-1",
+          "description": "Bottom right block for facility support."
+        }
+      ]
+    },
+    "marquee": {
+      "style": "Slow editorial ribbon. Very slow, smooth drift. Pale text with high spacing.",
+      "content": "INNOVACIÓN • SOSTENIBILIDAD • EXCELENCIA • COMPROMISO • CONFIANZA • "
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Use 'Crystal Glass' for the sticky header: backdrop-blur-xl, subtle border-white/10, bg-[#12261A]/70.",
+    "textures": "Include a very subtle noise/grain CSS/SVG overlay across the entire site to give it an organic, premium feel.",
+    "borders": "1px solid #1E3B2A to separate bento grid items and cards without using heavy drop shadows."
+  },
+  "motion": {
+    "scrolling": "Use 'lenis' (or similar smooth scroll provider) for smooth momentum scrolling.",
+    "animations": "Framer Motion for layout reveals. Staggered fade-up for bento grid. On-load signature moment: SVG trace animation for the logo 'Z', followed by kinetic H1 text mask reveal.",
+    "hover_states": "Interactive elements should have slight lifts (-translate-y-1) and change border/text color to the accent (#D8F33C).",
+    "marquee_speed": "Very slow drift to emphasize luxury."
+  },
+  "image_urls": [
+    {
+      "category": "Hero / Main Brand Image",
+      "url": "https://images.unsplash.com/photo-1556983852-43bf21186b2a",
+      "description": "Building covered in plants, perfectly showing the fusion of real estate and green areas.",
+      "alt": "Modern building covered in lush plants"
+    },
+    {
+      "category": "Property Management (Administración de inmuebles)",
+      "url": "https://images.unsplash.com/photo-1621831337128-35676ca30868",
+      "description": "Sleek glass-walled office building representing premium property management.",
+      "alt": "Glass walled building"
+    },
+    {
+      "category": "Landscaping (Áreas verdes)",
+      "url": "https://images.unsplash.com/photo-1597201278257-3687be27d954",
+      "description": "Lush manicured garden and shrubs, emphasizing quality landscaping.",
+      "alt": "Lush flower beds and manicured shrubs"
+    },
+    {
+      "category": "Facility Services (Servicios combinados)",
+      "url": "https://images.unsplash.com/photo-1759753985489-11719e67dc7a",
+      "description": "Modern building with a courtyard showing active maintenance and support services.",
+      "alt": "Modern building with a courtyard garden"
+    },
+    {
+      "category": "About Us / Team",
+      "url": "https://images.unsplash.com/photo-1758691736975-9f7f643d178e",
+      "description": "Professional, diverse team indoors, looking warm and approachable.",
+      "alt": "Diverse group of professionals standing together indoors"
+    }
+  ],
+  "components": {
+    "header": "Fixed, sticky with glassmorphism. Desktop links visible (do not hide in a burger menu on desktop), logo on left, contact CTA on right.",
+    "forms": "Use Shadcn UI forms heavily customized for .js. Dark inputs with 1px border (#1E3B2A), focus ring in the accent color (#D8F33C), dark backgrounds. Labels in light cream.",
+    "buttons": "Pill-shaped or rounded-none (sharp) buttons. Primary CTA should have the neon-lime accent background (#D8F33C) with dark text (#08140D) for extreme contrast and high conversion."
+  },
+  "accessibility": {
+    "contrast": "Ensure the light cream text meets WCAG AA on the dark botanical background. Hero image MUST have bg-black/40 overlay. No transparent backgrounds behind text.",
+    "testing": "All interactive elements MUST include data-testid (e.g., data-testid='contact-submit-btn').",
+    "motion": "Respect prefers-reduced-motion for the marquee and scroll animations."
+  },
+  "instructions_to_main_agent": [
+    "You are building an Awwwards-level landing page. DO NOT default to a basic Vercel or generic Tailwind template. This is high-end design.",
+    "Implement the custom SVG logo: a 'Z' blending into a leaf.",
+    "Do NOT use Inter, Roboto, or Space Grotesk. Use Playfair Display (headings) and Manrope (body). Provide Google Font imports in index.css.",
+    "Integrate 'lenis' for smooth scrolling.",
+    "Use framer-motion for the kinetic masked text reveal in the hero section.",
+    "Construct the Services section using the Tetris Bento grid exactly as described.",
+    "Include realistic Spanish (es) content. Do not use generic Lorem Ipsum. Use names like 'Mateo Vargas', 'Camila Rojas'. H1 should be something like 'Gestión experta para entornos que inspiran'.",
+    "Create a Contact form section at the bottom (Nombre, Email, Teléfono, Servicio, Mensaje).",
+    "Apply the styling exclusively in standard .js/.jsx React files (NOT .tsx). Customize Shadcn components in JS.",
+    "Add 'data-testid' to every interactive button, input, and link.",
+    "CRITICAL: Header must have a solid or highly opaque blurred background. Never leave it fully transparent when scrolling over content."
+  ],
+  "universal_guidelines": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add specific transitions.",
+    "You MUST NOT center align the app container (.App { text-align: center; }).",
+    "Always use modern button styles with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Use sonner for toasts, located in /app/frontend/src/components/ui/sonner.jsx or similar path."
+  ]
+}
